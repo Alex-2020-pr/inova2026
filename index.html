@@ -41,7 +41,7 @@
       padding: 0 32px;
     }
 
-    /* header / topbar */
+    /* top bar fixo */
     .top-bar {
       background-color: var(--primary);
       color: white;
@@ -111,13 +111,15 @@
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .logo-img {
-      max-height: 70px;
+      max-height: 80px;
       width: auto;
       border-radius: 8px;
+      display: block; /* garante que a imagem apareça */
     }
 
     .logo-text h1 {
@@ -274,7 +276,7 @@
       filter: drop-shadow(0 20px 15px rgba(0,0,0,0.1));
     }
 
-    /* seções genéricas */
+    /* seções */
     section {
       padding: 70px 0;
     }
@@ -293,7 +295,7 @@
       margin-bottom: 48px;
     }
 
-    /* cards serviços - mantendo a lista original mas com estilo */
+    /* cards serviços */
     .services-list {
       background: var(--white);
       border-radius: 32px;
@@ -325,7 +327,7 @@
       font-size: 1.3rem;
     }
 
-    /* cards de conteúdo (sobre, endereço, etc) */
+    /* cards de info */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -382,7 +384,7 @@
       margin-right: 10px;
     }
 
-    /* política de privacidade */
+    /* privacidade */
     .privacidade-card {
       background: #eef4f9;
       border-radius: 32px;
@@ -418,6 +420,26 @@
     }
 
     .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-logo img {
+      max-height: 50px;
+      width: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .footer-logo span {
+      font-weight: 600;
+      font-size: 1.3rem;
       color: white;
     }
 
@@ -555,7 +577,7 @@
 
     @media (max-width: 900px) {
       .main-header .container { flex-direction: column; text-align: center; }
-      .logo-area { flex-direction: column; }
+      .logo-area { justify-content: center; }
       .navbar .container { flex-direction: column; gap: 15px; }
       .nav-links { flex-wrap: wrap; justify-content: center; }
       .hero .container { flex-direction: column; }
@@ -584,7 +606,8 @@
   <div class="main-header">
     <div class="container">
       <div class="logo-area">
-        <img class="logo-img" src="logo.jpeg" alt="Inova Radiologia Cascavel" onerror="this.style.display='none'">
+        <!-- Logo com caminho correto - direto da raiz -->
+        <img class="logo-img" src="logo.jpeg" alt="Inova Radiologia Cascavel">
         <div class="logo-text">
           <h1>Inova Radiologia Cascavel</h1>
           <p>Diagnóstico por imagem com tecnologia e precisão</p>
@@ -744,9 +767,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-            <img src="logo.jpeg" alt="Inova" style="max-height: 50px; border-radius: 8px;" onerror="this.style.display='none'">
-            <span style="font-weight: 600; font-size: 1.3rem;">Inova Radiologia</span>
+          <div class="footer-logo">
+            <!-- Logo também no footer -->
+            <img src="logo.jpeg" alt="Inova Radiologia">
+            <span>Inova Radiologia</span>
           </div>
           <p>Diagnóstico por imagem com tecnologia e precisão em Cascavel.</p>
           <div class="social-icons">
